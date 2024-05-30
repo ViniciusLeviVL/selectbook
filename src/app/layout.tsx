@@ -3,6 +3,7 @@ import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 
 import { cn } from '@/lib/utils'
+import NavBar from '@/components/MainNavBar'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -27,7 +28,12 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        {children}
+        <main className="lg:flex h-full lg:px-8">
+          <NavBar />
+          <div className="h-full p-4 sm:px-6 lg:px-8">
+            {children}
+          </div>
+        </main> 
       </body>
     </html>
   )

@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 import { PlusCircledIcon } from '@radix-ui/react-icons'
 
 import { Button } from '@/components/ui/button'
@@ -8,64 +7,18 @@ import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 import { AlbumArtwork } from './_components/album-artwork'
-import { Menu } from './_components/menu'
 import { PodcastEmptyPlaceholder } from './_components/podcast-empty-placeholder'
-import { Sidebar } from './_components/sidebar'
 import { listenNowAlbums, madeForYouAlbums } from '@/data/albums'
-import { playlists } from '@/data/playlists'
 
 export const metadata: Metadata = {
-  title: 'Music App',
-  description: 'Example music app using the components.',
+  title: 'SelectBook',
+  description: 'Página inicial da SelectBook',
 }
 
-export default function MusicPage() {
+export default function HomePage() {
   return (
     <>
-      <div className="md:hidden">
-        <Image
-          src="/examples/music-light.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/music-dark.png"
-          width={1280}
-          height={1114}
-          alt="Music"
-          className="hidden dark:block"
-        />
-      </div>
-      <div className="hidden md:block">
-        <Menu />
-        <div className="border-t">
-          <div className="bg-background">
-            <div className="grid lg:grid-cols-5">
-              <Sidebar playlists={playlists} className="hidden lg:block" />
-              <div className="col-span-3 lg:col-span-4 lg:border-l">
-                <div className="h-full px-4 py-6 lg:px-8">
-                  <Tabs defaultValue="music" className="h-full space-y-6">
-                    <div className="space-between flex items-center">
-                      <TabsList>
-                        <TabsTrigger value="music" className="relative">
-                          Music
-                        </TabsTrigger>
-                        <TabsTrigger value="podcasts">Podcasts</TabsTrigger>
-                        <TabsTrigger value="live" disabled>
-                          Live
-                        </TabsTrigger>
-                      </TabsList>
-                      <div className="ml-auto mr-4">
-                        <Button>
-                          <PlusCircledIcon className="mr-2 h-4 w-4" />
-                          Add music
-                        </Button>
-                      </div>
-                    </div>
-                    <TabsContent
-                      value="music"
+                    <div
                       className="border-none p-0 outline-none"
                     >
                       <div className="flex items-center justify-between">
@@ -122,9 +75,8 @@ export default function MusicPage() {
                           <ScrollBar orientation="horizontal" />
                         </ScrollArea>
                       </div>
-                    </TabsContent>
-                    <TabsContent
-                      value="podcasts"
+                    </div>
+                    <div
                       className="h-full flex-col border-none p-0 data-[state=active]:flex"
                     >
                       <div className="flex items-center justify-between">
@@ -139,14 +91,8 @@ export default function MusicPage() {
                       </div>
                       <Separator className="my-4" />
                       <PodcastEmptyPlaceholder />
-                    </TabsContent>
-                  </Tabs>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                    </div>
+
     </>
   )
 }
