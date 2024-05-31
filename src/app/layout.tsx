@@ -24,16 +24,16 @@ export default function RootLayout({
     <html lang="pt-br">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-background font-sans antialiased max-w-screen overflow-x-hidden',
           fontSans.variable,
         )}
       >
-        <main className="lg:flex h-full lg:px-8">
+        <main className="lg:flex justify-center">
           <NavBar />
-          <div className="h-full p-4 sm:px-6 lg:px-8">
+          <div className="p-4 sm:px-6 lg:px-8 lg:max-w-[calc(100%-14rem)]">
             {children}
           </div>
-        </main> 
+        </main>
       </body>
     </html>
   )
