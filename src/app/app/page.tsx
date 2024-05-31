@@ -19,14 +19,14 @@ export default function HomePage() {
               Top 5 Livros da Semana
             </h2>
             <p className="text-sm text-muted-foreground">
-              Escolha um e leia agora!
+              Escolha um e reserve agora!
             </p>
           </div>
         </div>
         <Separator className="my-4" />
         <div className="relative">
           <ScrollArea>
-            <div className="flex space-x-4 pb-4">
+            <div className="flex space-x-2 pb-4">
               {topFiveBooks.map((book) => (
                 <BookBanner
                   key={book.name}
@@ -41,7 +41,7 @@ export default function HomePage() {
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
-        <div className="mt-6 space-y-1">
+        <div className="mt-6">
           <h2 className="text-2xl font-semibold tracking-tight">Para Você</h2>
           <p className="text-sm text-muted-foreground">
             Algumas recomendações baseadas no que você gosta.

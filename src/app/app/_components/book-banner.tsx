@@ -20,15 +20,22 @@ export function BookBanner({
   ...props
 }: BookBannerProps) {
   return (
-    <div className={cn('space-y-3', className)} {...props}>
-      <div className="overflow-hidden rounded-md">
+    <div
+      className={cn(
+        'space-y-3 p-1',
+        aspectRatio === 'portrait' && 'p-2',
+        className,
+      )}
+      {...props}
+    >
+      <div className="overflow-hidden rounded-md hover:scale-105">
         <Image
           src={book.imageSrc ?? '/img/book_1.jpg'}
           alt={book.name}
           width={width}
           height={height}
           className={cn(
-            'h-auto w-auto object-cover transition-all hover:scale-105',
+            'h-auto w-auto object-cover transition-all select-none',
             aspectRatio === 'portrait' ? 'aspect-[3/4]' : 'aspect-square',
           )}
         />
