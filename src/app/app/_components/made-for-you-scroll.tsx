@@ -12,16 +12,17 @@ export default function MadeForYouScrollArea() {
   const user = useUserContext((s) => s.user)
   const books = useRecommendedBooks(8, user?.id)
 
-  const madeForYouBooks = books.length > 0 ? books : staticEightBooks
+  const hasRecommendations = books.length > 0 && user
+  const madeForYouBooks = hasRecommendations ? books : staticEightBooks
 
   return (
     <>
       <div className="mt-6">
         <h2 className="text-2xl font-semibold tracking-tight">
-          {books.length > 0 ? 'Para Você' : `Top 8 do Ano`}
+          {hasRecommendations ? 'Para Você' : `Top 8 do Ano`}
         </h2>
         <p className="text-sm text-muted-foreground">
-          {books.length > 0
+          {hasRecommendations
             ? 'Algumas recomendações baseadas no que você gosta.'
             : `Uma lista com os livros mais lidos de ${new Date().getFullYear()}`}
         </p>

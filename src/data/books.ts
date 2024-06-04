@@ -34,8 +34,8 @@ export const topFiveBooks: Book[] = [
 
 export const staticEightBooks: Book[] = [
   {
-    name: 'Caminhos Cruzados',
-    author: 'João Ribeiro',
+    name: 'O Pequeno Príncipe',
+    author: 'Antoine de Saint-Exupéry',
     imageSrc: '/img/thumbs/book_3.jpg',
   },
   {
@@ -59,14 +59,14 @@ export const staticEightBooks: Book[] = [
     imageSrc: '/img/thumbs/book_7.jpg',
   },
   {
-    name: 'Noite na Taverna',
-    author: 'Juliana Martins',
-    imageSrc: '/img/thumbs/book_8.jpg',
+    name: 'Harry Potter e o Cálice de Fogo',
+    author: 'J.K. Rowling',
+    imageSrc: '/img/thumbs/book_99.jpg',
   },
   {
-    name: 'Entre o Amor e a Guerra',
-    author: 'Marcelo Andrade',
-    imageSrc: '/img/thumbs/book_9.jpg',
+    name: '1984',
+    author: 'George Orwell',
+    imageSrc: '/img/thumbs/book_15.jpg',
   },
   {
     name: 'Aventura no Deserto',
