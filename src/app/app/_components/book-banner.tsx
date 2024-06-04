@@ -28,7 +28,12 @@ export function BookBanner({
       )}
       {...props}
     >
-      <div className="overflow-hidden rounded-md hover:scale-105">
+      <div
+        className={cn(
+          'overflow-hidden rounded-md hover:scale-105',
+          `max-w-[${width}px] max-h-[${height}px]`,
+        )}
+      >
         <Image
           src={book.imageSrc ?? '/img/book_1.jpg'}
           alt={book.name}
@@ -36,6 +41,7 @@ export function BookBanner({
           height={height}
           className={cn(
             'h-auto w-auto object-cover transition-all select-none',
+            `w-[${width}px] h-[${height}px]`,
             aspectRatio === 'portrait' ? 'aspect-[3/4]' : 'aspect-square',
           )}
         />

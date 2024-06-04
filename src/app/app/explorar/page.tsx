@@ -1,6 +1,6 @@
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-import { allBooks } from '@/data/books'
 import { BookBanner } from '../_components/book-banner'
+import { allBooks } from '@/data/allBooks'
 
 export default function ExplorePage() {
   return (
